@@ -1,12 +1,15 @@
-import { TParticipants } from '@/types/participants';
+import { TParticipant } from '@/types/participants';
 
-export type TRace = {
+export type TRaceBasic = {
     id: number,
     name: string,
     active: boolean,
-    participants: number
 }
 
-export type TRaceWithParticipants = TRace & {
-    participants: TParticipants[]
+export type TRace = TRaceBasic & {
+    participants: number[]
+}
+
+export type TRaceWithParticipants = TRaceBasic &  {
+    participants: TParticipant[]
 }

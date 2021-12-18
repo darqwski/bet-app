@@ -1,4 +1,4 @@
-export type TParticipants = {
+export type TParticipant = {
     id: number;
     body: string;
 }

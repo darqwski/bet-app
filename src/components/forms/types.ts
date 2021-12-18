@@ -11,7 +11,7 @@ export interface ISelect {
     data: TSelectData,
     name: string
     dataName?:string,
-    selected:string;
+    selected?:string;
     onChange:(event:  ChangeEvent<HTMLSelectElement>) => void
 }
 
@@ -22,5 +22,12 @@ export interface IWithLabel {
 export interface IFormInput {
     label: string;
     name: string;
+    white?: boolean;
+    type: string;
+}
+export interface IFormRadio {
+    label: string;
+    name: string;
+    value: number | string;
     white?: boolean;
 }

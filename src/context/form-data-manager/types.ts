@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
 
 export interface IFormData {
-    [name: string]: string
+    [name: string]: string | number | undefined
 }
 
 /**
@@ -14,9 +14,9 @@ export interface IFormData {
  * @property {Array} errorMessages -  errors state
  * @property {function} clearForm -  Clear form, useful after reseting form
  */
-export interface IFormDataContext {
-    setField(name: string): (event: {target: { value : string}}) => void;
-    formData: IFormData,
+export interface IFormDataContext<T = IFormData> {
+    setField(name: string): (event: {target: { value : string | number | undefined }}) => void;
+    formData: T,
     setFormData: Dispatch<React.SetStateAction<IFormData>>;
     addError(error: string):void;
     clearErrors():void;

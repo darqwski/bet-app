@@ -2,7 +2,6 @@ import FormInput from './form-input';
 import WithLabel from './with-label';
 import FormSelect from './form-select';
 import Select from './select';
-
 /**
  * React Architecture
  *
