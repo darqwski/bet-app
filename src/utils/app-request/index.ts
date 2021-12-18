@@ -1,4 +1,4 @@
-import { ROUTER_APP_PREFIX } from '@/config/app-config';
+import { REQUEST_PREFIX, ROUTER_APP_PREFIX } from '@/config/app-config';
 
 /**
  * React Architecture
@@ -20,7 +20,7 @@ const appRequest = <T>({
 	headers?: {
 		[key: string]: string
 	}
-}): Promise<{ data: T, status: number }> => fetch(ROUTER_APP_PREFIX+url, {
+}): Promise<{ data: T, status: number }> => fetch(REQUEST_PREFIX+url, {
 		...rest,
 		body: data && JSON.stringify(data),
 		method: method,

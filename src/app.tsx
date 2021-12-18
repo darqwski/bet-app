@@ -6,6 +6,7 @@ import './css/index.less';
 import AppManager from '@/context/app-manager';
 import ModalManager from '@/context/modal-manager';
 import SnackBarManager from '@/context/snackbar-manager';
+import RacesManager from '@/context/races-manager/RacesManager';
 
 /**
  * React Architecture
@@ -17,24 +18,26 @@ interface IApp {
 }
 
 const App: React.FC<IApp> = ({ appData }) => {
-    return (
-        <AppManager appData={appData}>
-            <ModalManager>
-                <SnackBarManager>
-                    <Router>
-                        {routing.map(({ path, component }, index) => (
-                            <Route
-                                exact
-                                path={`${ROUTER_APP_PREFIX}${path}`}
-                                component={component}
-                                key={`routing-${index}`}
-                            />
-                        ))}
-                    </Router>
-                </SnackBarManager>
-            </ModalManager>
-        </AppManager>
-    );
+	return (
+		<AppManager appData={appData}>
+			<ModalManager>
+				<SnackBarManager>
+					<RacesManager>
+						<Router>
+							{routing.map(({ path, component }, index) => (
+								<Route
+									exact
+									path={`${ROUTER_APP_PREFIX}${path}`}
+									component={component}
+									key={`routing-${index}`}
+								/>
+							))}
+						</Router>
+					</RacesManager>
+				</SnackBarManager>
+			</ModalManager>
+		</AppManager>
+	);
 };
 
 export default App;
