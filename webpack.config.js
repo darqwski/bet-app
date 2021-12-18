@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
 	mode: 'development',
 	watchOptions: {
@@ -15,7 +16,7 @@ module.exports = {
 	},
 	entry: path.resolve(__dirname, 'src', 'index.tsx'),
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, 'public/scripts'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -46,7 +47,6 @@ module.exports = {
 		},
 		]
 	},
-	plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') })],
 	optimization: {
 		runtimeChunk: {
 			name: 'runtime'

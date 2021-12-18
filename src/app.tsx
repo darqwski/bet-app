@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, useLocation } from 'react-router-dom';
 import routing from './config/routing';
 import { ROUTER_APP_PREFIX } from './config/app-config';
 import './css/index.less';
@@ -18,6 +18,7 @@ interface IApp {
 }
 
 const App: React.FC<IApp> = ({ appData }) => {
+
 	return (
 		<AppManager appData={appData}>
 			<ModalManager>
@@ -27,7 +28,7 @@ const App: React.FC<IApp> = ({ appData }) => {
 							{routing.map(({ path, component }, index) => (
 								<Route
 									exact
-									path={`${ROUTER_APP_PREFIX}${path}`}
+									path={path}
 									component={component}
 									key={`routing-${index}`}
 								/>

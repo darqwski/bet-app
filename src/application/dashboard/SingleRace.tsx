@@ -1,5 +1,6 @@
 import React from 'react';
 import { TRace } from '@/types/races';
+import { Link } from 'react-router-dom';
 
 export interface ISingleRace {
 	race: TRace
@@ -7,12 +8,12 @@ export interface ISingleRace {
 
 const SingleRace: React.FC<ISingleRace> = ({ race }) => {
 	return (
-		<a href={`races/${race.id}/`}>
+		<Link to={`races/${race.id}/`}>
 			<div className="card">
 				<p>{race.name}</p>
 				<p>{race.active ? 'Active' : 'Not Active'}</p>
 			</div>
-		</a>
+		</Link>
 	);
 };
 
