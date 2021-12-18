@@ -1,7 +1,7 @@
-import FormInput from "./form-input";
-import WithLabel from "./with-label";
-import FormSelect from "./form-select";
-import Select from "./Select";
+import FormInput from './form-input';
+import WithLabel from './with-label';
+import FormSelect from './form-select';
+import Select from './select';
 
 /**
  * React Architecture
@@ -11,5 +11,5 @@ import Select from "./Select";
  */
 
 export {
-    FormInput, WithLabel, Select, FormSelect
-}
+	FormInput, WithLabel, Select, FormSelect
+};

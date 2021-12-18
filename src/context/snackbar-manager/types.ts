@@ -1,5 +1,5 @@
 export interface ISnackbarContext {
-    addSnackBar: { text: string; timeout: number };
+    addSnackBar: (props: { text: string; timeout: number }) => void;
     removeSnackbar: (id: string) => void;
 }
 

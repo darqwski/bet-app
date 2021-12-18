@@ -15,18 +15,18 @@ const appRequest = <T>({
 	...rest
 }: {
 	url: string,
-	data?: unknown,
+	data?: any,
 	method?: 'POST' | 'GET' | 'PUT' | 'DELETE',
 	headers?: {
 		[key: string]: string
 	}
 }): Promise<{ data: T, status: number }> => fetch(ROUTER_APP_PREFIX+url, {
-	...rest,
-	body: data && JSON.stringify(data),
-	method: method,
-	headers: {
-		...(headers || {}),
-	}
-}).then( response => response.json().then(data => ({ data, status: response.status })));
+		...rest,
+		body: data && JSON.stringify(data),
+		method: method,
+		headers: {
+			...(headers || {}),
+		}
+	}).then( response => response.json().then(data => ({ data, status: response.status })));
 
 export default appRequest;

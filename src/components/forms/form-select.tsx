@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Select from './Select';
+import Select from './select';
 import WithLabel from './with-label';
 import { useFormDataContext } from '@/context/form-data-manager/context';
 import { IFormSelect } from '@/components/forms/types';
