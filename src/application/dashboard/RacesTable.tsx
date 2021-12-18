@@ -14,7 +14,7 @@ const RacesTable: React.FC<IRacesTable> = ({ races }) => {
 		<div>
 			<RacesController setFiltered={setFiltered} isFiltered={isFiltered} />
 
-			<div>
+			<div className="races-container">
 				{races && races
 					.filter(race=> !isFiltered || race.active )
 					.map((race)=>(

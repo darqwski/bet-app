@@ -8,12 +8,13 @@ export interface ISingleRace {
 
 const SingleRace: React.FC<ISingleRace> = ({ race }) => {
 	return (
-		<Link to={`races/${race.id}/`}>
-			<div className="card">
-				<p>{race.name}</p>
-				<p>{race.active ? 'Active' : 'Not Active'}</p>
-			</div>
-		</Link>
+
+		<div className={`card clickable race ${race.active ? '' : 'race__inactive'}`}>
+			<Link to={`races/${race.id}/`}>
+				<p>{race.name} {race.active ? '' : 'Not Active'}</p>
+				<p>{race.participants.length} participants</p>
+			</Link>
+		</div>
 	);
 };
 

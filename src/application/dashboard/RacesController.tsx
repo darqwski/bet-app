@@ -8,9 +8,13 @@ export interface IRacesController {
 const RacesController: React.FC<IRacesController> = ({ setFiltered, isFiltered }) => {
 
 	return (
-		<button className="btn" onClick={()=>setFiltered(i=>!i)}>
-			{isFiltered ? 'Show inactive' : 'Hide inactice'}
-		</button>
+		<div className="race-controller">
+			<a className="link" onClick={()=>setFiltered(i=>!i)}>
+				<span className={`material-icons-outlined ${isFiltered ? 'visibility' : 'visibility_off'}`}/>
+				<span>{isFiltered ? 'Show inactive' : 'Hide inactive'}</span>
+			</a>
+		</div>
+
 	);
 };
 

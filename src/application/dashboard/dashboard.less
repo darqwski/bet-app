@@ -1,0 +1,39 @@
+@import "src/css/index.less";
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 5px solid @color4;
+  padding-bottom: 2rem;
+}
+
+.race {
+  display: block;
+    & p {
+      text-decoration: none;
+      text-underline: none;
+      color: #333;
+
+      &:first-child {
+          font-weight: 600;
+      }
+    }
+    &__inactive {
+      background-color: #DEDEDE;
+    }
+  padding: 2rem;
+  margin: 1rem;
+  width: 30%;
+}
+
+.races-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-right: 2rem;
+}
+
+.race-controller {
+  display: flex;
+  justify-content: flex-end;
+}
