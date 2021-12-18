@@ -9,7 +9,6 @@ const RacesDashboard: React.FC = () => {
 
 	return (
 		<div>
-			<h3 className="header">Small web-based race betting</h3>
 			{isLoading ? <Loading /> : <RacesTable races={races} />}
 		</div>
 	);

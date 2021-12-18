@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
+import i18n from 'i18next';
+import pl from './translations/pl';
+import {  initReactI18next } from 'react-i18next';
 
-/**
- * React Architecture
- * there is a lot of way how to pass data to application from backend without request
- * Here is only proposition, that backend is producting <template> or <script> tag with parsed JSON
- * then we are just gathering this data and adding to application
- */
-const data = document.getElementById('react-data') && document.getElementById('react-data')!.innerHTML;
+i18n
+	.use(initReactI18next) // passes i18n down to react-i18next
+	.init({
+		resources: {
+			pl: {
+				translation: {
+					...pl
+				}
+			}
+		},
+		lng: 'pl', // if you're using a language detector, do not define the lng option
+		fallbackLng: 'pl',
 
-ReactDOM.render(<App appData={data} />, document.getElementById('react-app'));
+		interpolation: {
+			escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
+		}
+	});
+
+ReactDOM.render(<App />, document.getElementById('react-app'));
