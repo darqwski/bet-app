@@ -2,16 +2,22 @@ import { createContext, useContext } from 'react';
 import { IFormDataContext } from './types';
 
 export const FormDataContext =createContext<IFormDataContext>({
-	setField: (name: string) => (event) =>  {
-		console.log(name, event);
+	setField: ()  =>  {
+		throw 'FormDataContext missing';
 	},
-	addError(error: string): void {
-		console.log(error);
+	addError(): void {
+		throw 'FormDataContext missing';
 	},
 	clearErrors(): void {
+		throw 'FormDataContext missing';
 	},
-	errorMessages: [],formData: {},setFormData:(data)=> data,
-	clearForm(): void {}
+	errorMessages: [],formData: {},
+	setFormData:()=> {
+		throw 'FormDataContext missing';
+	},
+	clearForm(): void {
+		throw 'FormDataContext missing';
+	}
 });
 
 export const useFormDataContext = (): IFormDataContext => useContext(FormDataContext);

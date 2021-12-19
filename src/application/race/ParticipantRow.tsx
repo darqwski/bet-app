@@ -11,16 +11,16 @@ const ParticipantRow: React.FC<IRaceRow> = ({ participant }) => {
 
 	const onRadioChange = (name: string) => {
 		if(name !== 'firstPlace' && (firstPlace === participant.id )) {
-			setField('firstPlace')({ target: { value: undefined } });
+			setField('firstPlace',undefined);
 		}
 		if(name !== 'secondPlace' && (secondPlace === participant.id)) {
-			setField('secondPlace')({ target: { value: undefined } });
+			setField('secondPlace',undefined);
 		}
 		if(name !== 'thirdPlace' && ( thirdPlace === participant.id)) {
-			setField('thirdPlace')({ target: { value: undefined } });
+			setField('thirdPlace',undefined);
 		}
 
-		setField(name)({ target: { value: participant.id } });
+		setField(name,participant.id);
 	};
 
 	return( 

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { FormDataContext } from './context';
-import { IFormData, IFormDataManager } from './types';
+import { IFormData, IFormDataManager, TFormValue } from './types';
 
 /**
  * React Architecture
@@ -11,12 +11,13 @@ import { IFormData, IFormDataManager } from './types';
 const FormDataManager: React.FC<IFormDataManager> = ({ initialData = {}, children }) => {
 	const [formData, setFormData] = useState<IFormData>(initialData);
 	const [errorMessages, setErrorMessages] = useState<string[]>([]);
-	const setField = (name: string) => ({ target: { value } }: { target: { value : string | number | undefined }}) => {
+	const setField = (name: string, value: TFormValue) => {
 		setFormData(data=>({ ...data, [name]: value }));
 	};
 	const clearForm = () => setFormData(initialData);
 
 	const addError = (message: string) => setErrorMessages((messages)=>[...messages, message]);
+
 	const clearErrors = () => setErrorMessages([]);
 
 	return (

@@ -13,7 +13,7 @@ const RacesController: React.FC<IRacesController> = ({ setFiltered, isFiltered }
 
 	return (
 		<div className="race-controller">
-			{Object.keys(bets).length ? <p> Your bets: {Object.keys(bets).length}</p> : null}
+			{Object.keys(bets).length ? <p> {t('Your bets')}: {Object.keys(bets).length}</p> : null}
 			<a className="link" onClick={()=>setFiltered(i=>!i)}>
 				<span className={`material-icons-outlined ${isFiltered ? 'visibility' : 'visibility_off'}`}/>
 				<span>{isFiltered ? t('Show inactive') : t('Hide inactive')}</span>

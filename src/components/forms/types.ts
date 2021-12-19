@@ -3,6 +3,7 @@ export interface IWithLabel {
     white?: boolean;
     id: string
 }
+
 export interface IFormInput {
     label: string;
     name: string;

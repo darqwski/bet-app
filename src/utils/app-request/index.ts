@@ -1,4 +1,4 @@
-import { REQUEST_PREFIX, ROUTER_APP_PREFIX } from '@/config/app-config';
+import { REQUEST_PREFIX } from '@/config/app-config';
 
 /**
  * React Architecture

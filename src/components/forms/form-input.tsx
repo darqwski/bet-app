@@ -8,7 +8,7 @@ const FormInput: React.FC<IFormInput> = ({ label, name, white, ...rest }) => {
 
 	return (
 		<WithLabel label={label} white={white} id={`input-${name}`}>
-			<input id={`input-${name}`} name={name} onChange={setField(name)} value={value} {...rest} />
+			<input id={`input-${name}`} name={name} onChange={(event)=>setField(name,event.target.value)} value={value} {...rest} />
 		</WithLabel>
 	);
 };
